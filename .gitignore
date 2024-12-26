@@ -3,3 +3,5 @@
 /section03/node_modules/randomcolor/randomColor.js
 /section03/node_modules/randomcolor/README.md
 /section03/node_modules/.package-lock.json
+.idea/
+node_modules/
