@@ -1,10 +1,20 @@
-import {useSearchParams} from "react-router-dom";
-
 // 쿼리스트링 방식 파라미터 관리
-const Home = () => {
-  const [params, setParams] = useSearchParams();
+import Button from "../components/Button.jsx";
+import Header from "../components/Header.jsx";
+import DiaryList from "../components/DiaryList.jsx";
 
-  return <div>Home</div>
+const Home = () => {
+
+  return (<>
+        <div>
+          <Header title={'2024년 12월'}
+                  leftChild={<Button text={'<'}/>}
+                  rightChild={<Button text={'>'}/>}
+          />
+          <DiaryList/>
+        </div>
+      </>
+  );
 }
 
 export default Home;
