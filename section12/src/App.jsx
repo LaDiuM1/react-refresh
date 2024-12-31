@@ -47,7 +47,7 @@ function reducer(state, action) {
 }
 
 export const DiaryStateContext = createContext();
-const DiaryDispatchContext = createContext();
+export const DiaryDispatchContext = createContext();
 
 function App() {
     const [data, dispatch] = useReducer(reducer, mockData);
