@@ -4,18 +4,20 @@ import Header from "../components/Header.jsx";
 import DiaryList from "../components/DiaryList.jsx";
 import {useContext, useState} from "react";
 import {DiaryStateContext} from "../App.jsx";
+import usePageTitle from "../hooks/usePageTitle.jsx";
 
 const getMonthlyData = (pivotDate, data) => {
     return data.filter(item => {
-        let createDate = new Date(item.createdDate);
-        return pivotDate.getFullYear() === createDate.getFullYear()
-            && pivotDate.getMonth() === createDate.getMonth()
+        let createdDate = new Date(item.createdDate);
+        return pivotDate.getFullYear() === createdDate.getFullYear()
+            && pivotDate.getMonth() === createdDate.getMonth()
     });
 }
 
 const Home = () => {
     const data = useContext(DiaryStateContext);
     const [pivotDate, setPivotDate] = useState(new Date());
+    usePageTitle('감정 일기장');
 
     const monthlyData = getMonthlyData(pivotDate, data);
 
